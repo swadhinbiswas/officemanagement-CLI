@@ -12,15 +12,15 @@ def bankingSystem():
   stylr = Style()
   stylr.makeheading(text="Welcome to Banking system",title="Banking System",style="bold red",border_style="red")
   stylr.makepanel(text="Choose an option",title="Bank",style="bold green",border_style="green")
-  stylr.maketree(text="1. Create account")
-  stylr.maketree(text="2. Transfer money")
-  stylr.maketree(text="3. Check balance")
+  stylr.maketree(text="1. Create account",style="bold green")
+  stylr.maketree(text="2. Transfer money",style="bold green")
+  stylr.maketree(text="3. Check balance",style="bold green")
   
-  stylr.maketree(text="4. All accounts")
-  stylr.maketree(text="5. Go back")
-  stylr.maketree(text="6. Exit Banking System")
-  stylr.maketree(text="7. Deposit money")
-  stylr.maketree(text="8. Withdraw money")
+  stylr.maketree(text="4. All accounts",style="bold green")
+  stylr.maketree(text="5. Go back",style="bold green")
+  stylr.maketree(text="6. Exit Banking System",style="bold red")
+  stylr.maketree(text="7. Deposit money",style="bold green")
+  stylr.maketree(text="8. Withdraw money",style="bold green")
 
   choice = input("Enter your choice: ")
   
@@ -71,8 +71,8 @@ def bankingSystem():
       bank.get_all_accounts()
       # print({"status":accounts['status'],"message":accounts['message']})
       stylr.makepanel(text="Choose an option",title="Bank",style="bold green",border_style="green")
-      stylr.maketree(text="1. Go back")
-      stylr.maketree(text="2. Exit Banking System")
+      stylr.maketree(text="1. Go back",style="bold red")
+      stylr.maketree(text="2. Exit Banking System",style="bold red")
       
       while True:
         choice = input("Enter your choice: ")
