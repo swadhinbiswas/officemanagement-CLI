@@ -15,7 +15,15 @@ class Style:
   def makeheading(self,*args,**kwargs):
     panel = Panel(kwargs['text'], title=kwargs['title'], style=kwargs['style'], border_style=kwargs['border_style'],title_align="center")
     self.console.print(panel, justify="center",style=kwargs['style'])
-    
+  def layout(self,**kwargs):
+    layout = Layout()
+    layout.split(
+        Layout(name=kwargs['name'], size=3),
+        Layout(name=kwargs['name1'], size=12, ratio=2),
+        Layout(name=kwargs['name2'], size=3),
+    )
+    self.console.print(layout)
+
     
     
   def maketable(self,**kwargs):
@@ -33,21 +41,13 @@ class Style:
     
   def maketree(self,**kwargs):
     
-    tree = Tree(kwargs['text'])
-    self.console.print(tree)
+    tree = Tree(kwargs['text'],guide_style="bold green")
+    self.console.print(tree,style="bold green")
     
-  def makelayout(self,**kwargs):
-    layout = Layout()
-    layout.split(
-        Layout(name="header"),
-        Layout(name="main", ratio=1),
-        Layout(name="footer"),
-    )
-    self.console.print(layout)
+
     
-  def makeprompt(self,**kwargs):
-    prompt = Prompt.ask(kwargs['text'],style=kwargs['style'])
-    return prompt
+  def warn(self, text):
+    self.console.print(text, style="bold red")
   
   
   def makelive(self,**kwargs):

@@ -1,7 +1,7 @@
 from src.settings.database import Database,Base
-from sqlalchemy import Column, Integer, String,DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Table, ForeignKey
 from datetime import datetime
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 
 
@@ -15,6 +15,11 @@ class Message(Base):
   updated_at = Column(DateTime, default=datetime.now(), onupdate=datetime.now())
   
 
+
+chatroom_members = Table('chatroom_members', Base.metadata,
+    Column('chatroom_id', Integer, ForeignKey('chatrooms.id'), primary_key=True),
+    Column('employee_id', Integer, ForeignKey('employees.id'), primary_key=True)
+)
 
 class Chatroom(Base):
   __tablename__ = 'chatrooms'
