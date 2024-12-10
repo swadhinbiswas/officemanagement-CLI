@@ -1,6 +1,6 @@
 import re 
 from werkzeug.security import generate_password_hash
-from src.models.employee import Employee
+from src.models import Employee
 from src.settings.database import Database
 from sqlalchemy.exc import SQLAlchemyError
 from src.Log import logger

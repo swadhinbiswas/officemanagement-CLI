@@ -41,15 +41,25 @@ class Style:
     
   def maketree(self,**kwargs):
     
+    style=kwargs.get('style')
+    
     tree = Tree(kwargs['text'],guide_style="bold green")
-    self.console.print(tree,style="bold green")
+    self.console.print(tree,style=style)
     
 
     
   def warn(self, text):
     self.console.print(text, style="bold red")
   
-  
+  def error(self, text):
+    self.console.print(text, style="bold red")
+    
+  def success(self, text):
+    self.console.print(text, style="bold green")
+    
+  def info(self, text):
+    self.console.print(text, style="bold blue")
+    
   def makelive(self,**kwargs):
     live = Live()
     self.console.print(live)

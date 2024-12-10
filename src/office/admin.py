@@ -41,7 +41,9 @@ class AdminClass:
      return {"status":"success","message":"Admin updated successfully"}
     else:
       return {"status":"error","message":"Admin not found"}
+    
 
+    
 
 
   
